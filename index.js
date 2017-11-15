@@ -9,9 +9,16 @@ function getApiData (searchTerm, callback){
 		
 	}
 	$.getJSON(youtubeSearchURL, query, callback);
+		// .fail(showErr);
 	console.log(query);
 	
 };
+
+// function showErr(err){
+// 	var errorMsg= `<p>I'm sorry we couldn't find that!</p>`;
+// 	$('.theresults').append(errorMsg);
+
+// }
 
 function showResults(results){
 	 $.each(results.items, function (videosArrayKey, videosArrayValue) {
@@ -24,10 +31,14 @@ function showResults(results){
 
 };
 
+function formReset (){
+	$( '.theresults' ).empty();
+};
+
 function clickSubmit () {
 	$('button').on('click', event => {
 		event.preventDefault();
-
+		formReset();
 				var searchCriteria= $('input[type=text]').val();
 		console.log('here is the search criteria: ' + searchCriteria);
 		getApiData(searchCriteria, showResults);
