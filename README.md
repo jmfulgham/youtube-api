@@ -1,2 +1,4 @@
 # youtube-api
-YouTube API Practice
+YouTube API 
+
+This is my first attempt to use an API. I was so excited to complete this assignment. Initially I created this without using Bootstrap to practice using API's. 
