@@ -1,25 +1,26 @@
 var youtubeSearchURL = 'https://www.googleapis.com/youtube/v3/search';
 var nextPageToken = null;
 
-function getApiData (){
+function organizeApiData (){
   console.log("here is nextPageToken", nextPageToken);
   var searchCriteria = $('input[type=text]').val();
-  _getApiData(searchCriteria, showResults, nextPageToken)
+  getApiData(searchCriteria, showResults, nextPageToken)
     .then((response) => nextPageToken = response.nextPageToken)
 };
 
 var clickSubmit = event => {
   event.preventDefault();
   formReset();
-  getApiData();
+  organizeApiData();
 };
+
 
 var goToNextPage = event => {
   event.preventDefault();
   formReset();
   // get the next page token
   // call getAPIDATA
-  getApiData();
+  organizeApiData();
 };
 
 var formReset = () => {
@@ -31,7 +32,7 @@ $('.search').on('click', clickSubmit);
 $('.next').on('click', goToNextPage);
 
 //
-function _getApiData(searchTerm, callback, pageToken) {
+function getApiData(searchTerm, callback, pageToken) {
   var query = {
     part: 'snippet',
     key: 'AIzaSyCR1A18yeOJ8ngGXDMB3F2S3hfS2JB2Q1E',
@@ -56,3 +57,9 @@ function showResults(results) {
      ${videosArrayValue.snippet.description}</div><div>`);
   });
 };
+
+
+function formReset() {
+  $('.theresults').empty();
+};
+
