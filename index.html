@@ -1,24 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>YouTube Search</title>
-	<link href="main.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<h1> Search Youtube</h1>
-<div class="searchbox">
-	<form action='#' class="YouTube-search">
-		<label for="query">Search YouTube for your video</label><br>
-		<input type="text" class="searchingFor">
-		<button type=submit>Search</button>
-	</form>
+<html lang="en">
+
+  <head>
+    <title>YouTube Search</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+  </head>
+
+<header role="banner">
+  <h1 class="display-1 jumbotron jumbotron-fluid 
+	 text-dark background">Search YouTube University</h1></header>
+  
+  <body>
+  	<!-- title and search block -->
+    <div class="col-12">
+    <div class="searchbox">
+      <form action='#' class="YouTube-search">
+       <label for="query"><h3 class="mx-auto">Search YouTube Below</h3></label>
+        <br>
+        <input type="text" class="searchingFor">
+        <button type="submit" class="search btn btn-danger">Search</button>
+      </form>
+    </div>
+  </div>
+
+
+
+<!-- Formatted search results -->
+<div class="invisible">
+<div class="row">
+  <div class="container">
+<div class="mx-auto" style="width:500px;">
+  <div class="col-12">
+    
+        <h2>Search Results</h2>
+        <div class="theresults bg-light">
+        </div>
+        <div>
+      <button type="button" class="next btn btn-danger">Next</button>
+    </div>
+  </div>
 </div>
-<div class="theresults" aria-live ="assertive">
-<h2>Search Results</h2>
+</div>
+</div>
 </div>
 
+		
+    
+
+<!-- Next button -->
+    
+
+<!-- Not sticky and fixed to the bottom -->
+<footer role="content info" class="invisible mb-0">
+  <div class="credit mx-auto" style="width:300px;">
+    <div class="text-light">
+    <h4>Created by Mone't Fulgham</h4>
+</div>
+</div>
+</footer>  
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src ="index.js"></script>
-</body>
+    <script src="index.js"></script>  
+  </body>
+
 </html>
